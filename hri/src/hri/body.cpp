@@ -43,7 +43,7 @@ Body::Body(
   const tf2::BufferCore & tf_buffer,
   const std::string & reference_frame)
 : FeatureTracker{
-    id, "/humans/bodies", "body_", node_interfaces, callback_group, tf_buffer, reference_frame}
+    id, "humans/bodies", "body_", node_interfaces, callback_group, tf_buffer, reference_frame}
 {
   RCLCPP_DEBUG_STREAM(
     node_interfaces_.get_node_logging_interface()->get_logger(), "New body detected: " << kNs_);

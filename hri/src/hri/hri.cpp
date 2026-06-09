@@ -67,30 +67,30 @@ HRIListener::HRIListener(NodeLikeSharedPtr node_like)
   callback = bind(&HRIListener::onTrackedFeature, this, FeatureType::kFace, std::placeholders::_1);
   feature_subscribers_[FeatureType::kFace] = rclcpp::create_subscription<hri_msgs::msg::IdsList>(
     node_interfaces_.get_node_parameters_interface(), node_interfaces_.get_node_topics_interface(),
-    "/humans/faces/tracked", default_qos, callback, options);
+    "humans/faces/tracked", default_qos, callback, options);
 
   callback = bind(&HRIListener::onTrackedFeature, this, FeatureType::kBody, std::placeholders::_1);
   feature_subscribers_[FeatureType::kBody] = rclcpp::create_subscription<hri_msgs::msg::IdsList>(
     node_interfaces_.get_node_parameters_interface(), node_interfaces_.get_node_topics_interface(),
-    "/humans/bodies/tracked", default_qos, callback, options);
+    "humans/bodies/tracked", default_qos, callback, options);
 
   callback = bind(&HRIListener::onTrackedFeature, this, FeatureType::kVoice, std::placeholders::_1);
   feature_subscribers_[FeatureType::kVoice] = rclcpp::create_subscription<hri_msgs::msg::IdsList>(
     node_interfaces_.get_node_parameters_interface(), node_interfaces_.get_node_topics_interface(),
-    "/humans/voices/tracked", default_qos, callback, options);
+    "humans/voices/tracked", default_qos, callback, options);
 
   callback = bind(
     &HRIListener::onTrackedFeature, this, FeatureType::kPerson, std::placeholders::_1);
   feature_subscribers_[FeatureType::kPerson] = rclcpp::create_subscription<hri_msgs::msg::IdsList>(
     node_interfaces_.get_node_parameters_interface(), node_interfaces_.get_node_topics_interface(),
-    "/humans/persons/known", default_qos, callback, options);
+    "humans/persons/known", default_qos, callback, options);
 
   callback = bind(
     &HRIListener::onTrackedFeature, this, FeatureType::kTrackedPerson, std::placeholders::_1);
   feature_subscribers_[FeatureType::kTrackedPerson] =
     rclcpp::create_subscription<hri_msgs::msg::IdsList>(
     node_interfaces_.get_node_parameters_interface(), node_interfaces_.get_node_topics_interface(),
-    "/humans/persons/tracked", default_qos, callback, options);
+    "humans/persons/tracked", default_qos, callback, options);
 }
 
 HRIListener::~HRIListener()

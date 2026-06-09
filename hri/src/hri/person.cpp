@@ -44,7 +44,7 @@ Person::Person(
   const tf2::BufferCore & tf_buffer,
   const std::string & reference_frame)
 : FeatureTracker{
-    id, "/humans/persons", "person_", node_interfaces, callback_group, tf_buffer, reference_frame},
+    id, "humans/persons", "person_", node_interfaces, callback_group, tf_buffer, reference_frame},
   listener_(listener)
 {
   RCLCPP_DEBUG_STREAM(

@@ -34,7 +34,7 @@ Voice::Voice(
   const tf2::BufferCore & tf_buffer,
   const std::string & reference_frame)
 : FeatureTracker{
-    id, "/humans/voices", "voice_", node_interfaces, callback_group, tf_buffer, reference_frame}
+    id, "humans/voices", "voice_", node_interfaces, callback_group, tf_buffer, reference_frame}
 {
   RCLCPP_DEBUG_STREAM(
     node_interfaces_.get_node_logging_interface()->get_logger(), "New voice detected: " << kNs_);
